@@ -1,0 +1,22 @@
+The solution to the CSS specificity issue involves carefully considering the order of rules and the specificity of the selectors.
+
+```css
+/* bugSolution.css */
+#id .special div {
+  color: purple;
+}
+
+.special div {
+  color: red;
+}
+
+div {
+  color: blue;
+}
+
+#id div {
+  color: green;
+}
+```
+
+In this corrected version, the highly specific `#id .special div` rule is placed first, ensuring its style overrides any other less specific selectors.  This ensures that the `color: purple` is always applied, resolving the browser inconsistency.  This is a good practice for preventing specificity issues.
