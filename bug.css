@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+div {
+  color: blue;
+}
+
+.special div {
+  color: red;
+}
+
+#id div {
+  color: green;
+}
+
+#id .special div {
+color: purple;
+}
+```
+
+This code is designed to showcase how specificity works. However, a subtle issue can arise depending on the order of rules and browser interpretation of specificity.  The expected behavior is that the final color of the element should be purple due to the high specificity of `#id .special div`. However, some browsers may choose to apply `color:red` and ignore the subsequent `color: purple` leading to unexpected visual results.
